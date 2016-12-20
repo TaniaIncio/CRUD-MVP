@@ -12,7 +12,6 @@ import com.tincio.example.projectnotes.R;
 
 public class NotesActivity extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
