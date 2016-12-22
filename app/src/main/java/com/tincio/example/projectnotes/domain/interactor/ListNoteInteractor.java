@@ -19,7 +19,7 @@ public class ListNoteInteractor {
         this.callback = callback;
     }
     public void getListNote(){
-        repository = new ListNoteRepository();
-        callback.responseNotes(repository.getNotes());
+        repository = new ListNoteRepository(callback);
+        repository.getNotesNetwork();
     }
 }

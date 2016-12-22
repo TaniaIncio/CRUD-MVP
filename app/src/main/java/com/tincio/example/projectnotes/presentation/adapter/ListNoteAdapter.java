@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.tincio.example.projectnotes.R;
 import com.tincio.example.projectnotes.data.model.Note;
+import com.tincio.example.projectnotes.data.repository.services.response.Result;
 
 import java.util.List;
 
@@ -24,11 +25,11 @@ import butterknife.ButterKnife;
 public class ListNoteAdapter extends RecyclerView.Adapter<ListNoteAdapter.ListNoteViewHolder>{
 
 
-    List<Note> list;
+    List<Result> list;
     private Cursor cursor;
     private ListNoteAdapterOnClickHandler handler;
 
-    public ListNoteAdapter(List<Note> list){
+    public ListNoteAdapter(List<Result> list){
         this.list = list;
     }
     @Override
@@ -42,7 +43,7 @@ public class ListNoteAdapter extends RecyclerView.Adapter<ListNoteAdapter.ListNo
 
     @Override
     public void onBindViewHolder(ListNoteViewHolder holder, int position) {
-        Note mNote = list.get(position);
+        Result mNote = list.get(position);
         holder.txtTitle.setText(mNote.getTitle());
         holder.txtTitle.setText(mNote.getDescription());
     }
@@ -79,7 +80,7 @@ public class ListNoteAdapter extends RecyclerView.Adapter<ListNoteAdapter.ListNo
     }
 
     public interface ListNoteAdapterOnClickHandler{
-        void onItemClick(Note mNote);
+        void onItemClick(Result mNote);
     }
 
     public void onItemClickAdapter(ListNoteAdapterOnClickHandler handler){

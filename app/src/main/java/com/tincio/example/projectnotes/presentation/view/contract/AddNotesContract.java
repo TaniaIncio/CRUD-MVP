@@ -1,4 +1,4 @@
-package com.tincio.example.projectnotes.presentation;
+package com.tincio.example.projectnotes.presentation.view.contract;
 
 import com.tincio.example.projectnotes.data.model.Note;
 

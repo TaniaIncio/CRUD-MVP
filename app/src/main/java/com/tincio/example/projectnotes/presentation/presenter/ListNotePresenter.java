@@ -1,9 +1,10 @@
 package com.tincio.example.projectnotes.presentation.presenter;
 
 import com.tincio.example.projectnotes.data.model.Note;
+import com.tincio.example.projectnotes.data.repository.services.response.Result;
 import com.tincio.example.projectnotes.domain.callback.ListNoteCallback;
 import com.tincio.example.projectnotes.domain.interactor.ListNoteInteractor;
-import com.tincio.example.projectnotes.presentation.ListNotesContract;
+import com.tincio.example.projectnotes.presentation.view.contract.ListNotesContract;
 
 import java.util.List;
 
@@ -37,7 +38,7 @@ public class ListNotePresenter implements ListNotesContract.ListNoteUserListener
     }
 
     @Override
-    public void responseNotes(List<Note> list) {
+    public void responseNotes(List<Result> list) {
         view.showIndicatorProgress(false);
         view.showNotes(list);
     }

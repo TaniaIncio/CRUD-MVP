@@ -7,7 +7,7 @@ import java.util.UUID;
 import static android.provider.BaseColumns._ID;
 
 /**
- * Created by juan on 26/10/2016.
+ * Created by tania on 26/10/2016.
  */
 
 public final class Note {

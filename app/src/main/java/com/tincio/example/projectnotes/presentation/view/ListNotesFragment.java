@@ -1,13 +1,10 @@
 package com.tincio.example.projectnotes.presentation.view;
 
 
-import android.database.Cursor;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.app.LoaderManager;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -18,7 +15,8 @@ import android.widget.TextView;
 
 import com.tincio.example.projectnotes.R;
 import com.tincio.example.projectnotes.data.model.Note;
-import com.tincio.example.projectnotes.presentation.ListNotesContract;
+import com.tincio.example.projectnotes.data.repository.services.response.Result;
+import com.tincio.example.projectnotes.presentation.view.contract.ListNotesContract;
 import com.tincio.example.projectnotes.presentation.adapter.ListNoteAdapter;
 import com.tincio.example.projectnotes.presentation.presenter.ListNotePresenter;
 
@@ -72,12 +70,6 @@ public class ListNotesFragment extends Fragment implements ListNotesContract.Lis
         super.onResume();
         presenter = new ListNotePresenter(this);
         presenter.loadNote(true);
-        adapter.onItemClickAdapter(new ListNoteAdapter.ListNoteAdapterOnClickHandler() {
-            @Override
-            public void onItemClick(Note mNote) {
-
-            }
-        });
     }
 
     @Override
@@ -96,9 +88,15 @@ public class ListNotesFragment extends Fragment implements ListNotesContract.Lis
     }
 
     @Override
-    public void showNotes(List<Note> list) {
+    public void showNotes(List<Result> list) {
         adapter = new ListNoteAdapter(list);
         rcvNotes.setAdapter(adapter);
+        adapter.onItemClickAdapter(new ListNoteAdapter.ListNoteAdapterOnClickHandler() {
+            @Override
+            public void onItemClick(Result mNote) {
+
+            }
+        });
         if(list.size()==0)
             lblError.setVisibility(View.VISIBLE);
         else

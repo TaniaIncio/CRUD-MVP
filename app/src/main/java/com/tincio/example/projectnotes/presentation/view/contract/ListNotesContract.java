@@ -1,6 +1,7 @@
-package com.tincio.example.projectnotes.presentation;
+package com.tincio.example.projectnotes.presentation.view.contract;
 
 import com.tincio.example.projectnotes.data.model.Note;
+import com.tincio.example.projectnotes.data.repository.services.response.Result;
 
 import java.util.List;
 
@@ -12,7 +13,7 @@ public interface ListNotesContract {
 
     public interface ListNoteView{
         void showIndicatorProgress(Boolean boleano);
-        void showNotes(List<Note> list);
+        void showNotes(List<Result> list);
         void addNote();
         void showDetails();
     }

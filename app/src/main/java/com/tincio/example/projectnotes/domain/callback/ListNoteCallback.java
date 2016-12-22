@@ -1,6 +1,7 @@
 package com.tincio.example.projectnotes.domain.callback;
 
 import com.tincio.example.projectnotes.data.model.Note;
+import com.tincio.example.projectnotes.data.repository.services.response.Result;
 
 import java.util.List;
 
@@ -10,5 +11,5 @@ import java.util.List;
 
 public interface ListNoteCallback {
 
-    public void responseNotes(List<Note> list);
+    public void responseNotes(List<Result> list);
 }

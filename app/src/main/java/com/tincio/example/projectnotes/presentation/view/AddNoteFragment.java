@@ -9,9 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.tincio.example.projectnotes.R;
-import com.tincio.example.projectnotes.presentation.AddNotesContract;
-
-import java.util.Set;
+import com.tincio.example.projectnotes.presentation.view.contract.AddNotesContract;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
